@@ -5,7 +5,8 @@
         {
             "name": "Sierra \"Komodo\" Brown",
             "email": "sierrakomodo@hey.com",
-            "role": "Developer"
+            "role": "Developer",
+            "homepage": "https://linktr.ee/sierrakomodo"
         }
     ],
     "autoload": {
@@ -30,5 +31,18 @@
         "comments": {
             "php": "Utilizes Enum types introduced by v8.1."
         }
-    }
+    },
+    "support": {
+        "issues": "https://github.com/SierraKomodo/PhpBitOperations/issues",
+        "source": "https://github.com/SierraKomodo/PhpBitOperations",
+        "wiki": "https://github.com/SierraKomodo/PhpBitOperations/wiki"
+    },
+    "homepage": "https://github.com/SierraKomodo/PhpBitOperations",
+    "keywords": [
+        "bit",
+        "bitwise",
+        "bitmask",
+        "bitflags",
+        "library"
+    ]
 }
