@@ -58,11 +58,34 @@ class BitEnumTest extends TestCase
     }
 
 
-    #[TestDox('creation of enum from bit position.')]
+    #[TestDox('creation of enum from bit position (Null-safe).')]
+    #[DataProvider('singleBitProvider')]
+    public function testTryFromBit(TestBitEnum $enum, int $bit, int $bitMask): void
+    {
+        $this->assertEquals($enum, TestBitEnum::tryFromBit($bit));
+    }
+
+
+    #[TestDox('creation of enum from bit position (Not null-safe).')]
     #[DataProvider('singleBitProvider')]
     public function testFromBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
         $this->assertEquals($enum, TestBitEnum::fromBit($bit));
+    }
+
+
+    #[TestDox('handling of non-existent bit position (Null-safe).')]
+    public function testTryFromBitHandlesNull(): void
+    {
+        $this->assertNull(TestBitEnum::tryFromBit(10));
+    }
+
+
+    #[TestDox('handling of non-existent bit position (Not null-safe).')]
+    public function testFromBitHandlesNull(): void
+    {
+        $this->expectException(Exception::class);
+        TestBitEnum::fromBit(10);
     }
 
 

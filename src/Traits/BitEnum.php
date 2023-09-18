@@ -8,6 +8,8 @@ use BackedEnum;
 use Exception;
 use SierraKomodo\BitWise\BitOperations;
 
+use function is_null;
+
 /**
  * Helper trait for enumerations intended to be used as bitflags.
  */
@@ -44,9 +46,31 @@ trait BitEnum
      * @param int $bit The bit position to seek.
      * @return BackedEnum|null Matching enumeration.
      */
-    public static function fromBit(int $bit): ?BackedEnum
+    public static function tryFromBit(int $bit): ?BackedEnum
     {
         return self::tryFrom($bit);
+    }
+
+
+    /**
+     * Fetches a backed enumeration for the provided bit position. By default, this assumes the value of the enum case
+     *  is the bit position and uses the result of {@link BackedEnum::tryFrom()}.
+     *
+     * Unlike {@link BitEnum::tryFromBit()}, this throws an exception instead of returning `null` if the bit was not
+     * found.
+     *
+     * @param int $bit The bit position to seek.
+     * @return BackedEnum Matching enumeration.
+     *
+     * @throws Exception
+     */
+    public static function fromBit(int $bit): BackedEnum
+    {
+        $result = self::tryFromBit($bit);
+        if (is_null($result)) {
+            throw new Exception("Requested bit position does not exist in this enumeration.");
+        }
+        return $result;
     }
 
 
