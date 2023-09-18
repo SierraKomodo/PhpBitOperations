@@ -42,9 +42,9 @@ trait BitEnum
      * is the bit position and uses the result of {@link BackedEnum::tryFrom()}.
      *
      * @param int $bit The bit position to seek.
-     * @return BackedEnum Matching enumeration.
+     * @return BackedEnum|null Matching enumeration.
      */
-    public static function fromBit(int $bit): BackedEnum
+    public static function fromBit(int $bit): ?BackedEnum
     {
         return self::tryFrom($bit);
     }
