@@ -1,0 +1,28 @@
+name: PHPUnit Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  phpunit-test:
+    name: Run PHPUnit Tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "8.1"
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+
+      - name: Install dependencies
+        uses: php-actions/composer@58260d1d3c7c1576becac3ac182175adf510e953
+
+      - name: Run tests
+        uses: php-actions/phpunit@8b81f7e713aba7ca15632bad78c56635ff327104
