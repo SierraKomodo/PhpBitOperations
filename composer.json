@@ -1,48 +1,48 @@
 {
-    "name": "sierrakomodo/bitwise",
-    "description": "A library of helpers for usage with bitwise operations in PHP programs.",
-    "authors": [
-        {
-            "name": "Sierra \"Komodo\" Brown",
-            "email": "sierrakomodo@hey.com",
-            "role": "Developer",
-            "homepage": "https://linktr.ee/sierrakomodo"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "SierraKomodo\\BitWise\\": "src/"
-        }
-    },
-    "license": "AGPL-3.0",
-    "autoload-dev": {
-        "psr-4": {
-            "SierraKomodo\\BitWise\\Tests\\": "tests/"
-        }
-    },
-    "require": {
-        "php": "^8.1"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^10.3"
-    },
-    "type": "library",
-    "extra": {
-        "comments": {
-            "php": "Utilizes Enum types introduced by v8.1."
-        }
-    },
-    "support": {
-        "issues": "https://github.com/SierraKomodo/BitWise/issues",
-        "source": "https://github.com/SierraKomodo/BitWise",
-        "wiki": "https://github.com/SierraKomodo/BitWise/wiki"
-    },
-    "homepage": "https://github.com/SierraKomodo/BitWise",
-    "keywords": [
-        "bit",
-        "bitwise",
-        "bitmask",
-        "bitflags",
-        "library"
-    ]
+  "name": "sierrakomodo/bitwise",
+  "description": "A library of helpers for usage with bitwise operations in PHP programs.",
+  "authors": [
+    {
+      "name": "Sierra \"Komodo\" Brown",
+      "email": "sierrakomodo@hey.com",
+      "role": "Developer",
+      "homepage": "https://linktr.ee/sierrakomodo"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SierraKomodo\\BitWise\\": "src/"
+    }
+  },
+  "license": "AGPL-3.0",
+  "autoload-dev": {
+    "psr-4": {
+      "SierraKomodo\\BitWise\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.3"
+  },
+  "type": "library",
+  "extra": {
+    "comments": {
+      "php": "Utilizes Enum types introduced by v8.1."
+    }
+  },
+  "support": {
+    "issues": "https://github.com/SierraKomodo/BitWise/issues",
+    "source": "https://github.com/SierraKomodo/BitWise",
+    "wiki": "https://github.com/SierraKomodo/BitWise/wiki"
+  },
+  "homepage": "https://github.com/SierraKomodo/BitWise",
+  "keywords": [
+    "bit",
+    "bitwise",
+    "bitmask",
+    "bitflags",
+    "library"
+  ]
 }
