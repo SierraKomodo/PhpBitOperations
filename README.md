@@ -1,4 +1,4 @@
-# Bitwise Operation Helpers
+# sierrakomodo/bitwise
 
 A library of helpers for usage with bitwise operations in PHP programs.
 
