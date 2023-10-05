@@ -33,11 +33,11 @@
         }
     },
     "support": {
-        "issues": "https://github.com/SierraKomodo/PhpBitOperations/issues",
-        "source": "https://github.com/SierraKomodo/PhpBitOperations",
-        "wiki": "https://github.com/SierraKomodo/PhpBitOperations/wiki"
+        "issues": "https://github.com/SierraKomodo/BitWise/issues",
+        "source": "https://github.com/SierraKomodo/BitWise",
+        "wiki": "https://github.com/SierraKomodo/BitWise/wiki"
     },
-    "homepage": "https://github.com/SierraKomodo/PhpBitOperations",
+    "homepage": "https://github.com/SierraKomodo/BitWise",
     "keywords": [
         "bit",
         "bitwise",
