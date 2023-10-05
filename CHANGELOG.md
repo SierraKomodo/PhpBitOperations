@@ -9,9 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- BitFlag class (`SierraKomodo\BitFlag`) and static methods for:
+- BitOperations class (`SierraKomodo\BitWise\BitOperations`) and static methods for:
   - Conversion between bit positions and bitmasks. *Note: Bit positions are 0-indexed in all functions and parameters*.
   - Bit position shifting.
   - Manipulation of single bits in a bitmask.
   - Manipulation of multiple bits via bitmask (Flags) against another bitmask.
-- Bitfield trait for use by Enums serving as semantic defines for bit flags (`SierraKomodo\BitEnum`).
+- Bitfield trait for use by Enums serving as semantic defines for bit flags (`SierraKomodo\BitWise\Traits\BitEnum`).
