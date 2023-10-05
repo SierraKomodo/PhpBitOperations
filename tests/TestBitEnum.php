@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SierraKomodo\BitWise\Tests;
 
-use SierraKomodo\BitWise\Traits\BitEnum;
+use SierraKomodo\BitWise\Trait\BitEnum;
 
 enum TestBitEnum: int
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SierraKomodo\BitWise\Traits;
+namespace SierraKomodo\BitWise\Trait;
 
 use BackedEnum;
 use Exception;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SierraKomodo\BitWise\Tests\Unit\Traits;
+namespace SierraKomodo\BitWise\Tests\Unit\Trait;
 
 use Exception;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -12,7 +12,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 use SierraKomodo\BitWise\BitOperations;
 use SierraKomodo\BitWise\Tests\TestBitEnum;
-use SierraKomodo\BitWise\Traits\BitEnum;
+use SierraKomodo\BitWise\Trait\BitEnum;
 
 #[TestDox('Unit testing for methods of BitEnum.')]
 #[CoversClass(BitEnum::class)]

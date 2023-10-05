@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SierraKomodo\BitWise\Tests\Unit\Classes;
+namespace SierraKomodo\BitWise\Tests\Unit\Class;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
