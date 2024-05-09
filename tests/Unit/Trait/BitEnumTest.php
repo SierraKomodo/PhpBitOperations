@@ -19,6 +19,9 @@ use SierraKomodo\BitWise\Trait\BitEnum;
 #[UsesClass(BitOperations::class)]
 class BitEnumTest extends TestCase
 {
+    /**
+     * @return array<string, array{TestBitEnum, int, int}>
+     */
     public static function singleBitProvider(): array
     {
         return [
@@ -29,6 +32,9 @@ class BitEnumTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{TestBitEnum[], int, bool}>
+     */
     public static function multipleBitsProvider(): array
     {
         return [
@@ -89,6 +95,12 @@ class BitEnumTest extends TestCase
     }
 
 
+    /**
+     * @param TestBitEnum[] $enumList
+     * @param int $mask
+     * @param bool $expectError
+     * @return void
+     */
     #[TestDox('creation of enum list from bit mask.')]
     #[DataProvider('multipleBitsProvider')]
     public function testFromMask(array $enumList, int $mask, bool $expectError): void
