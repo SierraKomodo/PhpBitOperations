@@ -256,7 +256,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('bitToMaskProvider')]
     public function testBitToMask(int $bit, int $mask): void
     {
-        $this->assertEquals($mask, BitOperations::bitToMask($bit));
+        $this::assertEquals($mask, BitOperations::bitToMask($bit));
     }
 
 
@@ -269,7 +269,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('maskToBitsProvider')]
     public function testBitMaskToBits(int $mask, array $bits): void
     {
-        $this->assertEquals($bits, BitOperations::bitMaskToBits($mask));
+        $this::assertEquals($bits, BitOperations::bitMaskToBits($mask));
     }
 
 
@@ -282,7 +282,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('maskToBitsProvider')]
     public function testBitsToMask(int $mask, array $bits): void
     {
-        $this->assertEquals($mask, BitOperations::bitsToMask($bits));
+        $this::assertEquals($mask, BitOperations::bitsToMask($bits));
     }
 
 
@@ -290,14 +290,14 @@ class BitFlagTest extends TestCase
     #[DataProvider('shiftBitsRightProvider')]
     public function testShiftBitsRight(int $before, int $positions, int $after): void
     {
-        $this->assertEquals($after, BitOperations::shiftBitsRight($before, $positions));
+        $this::assertEquals($after, BitOperations::shiftBitsRight($before, $positions));
     }
 
     #[TestDox('shift bits left method.')]
     #[DataProvider('shiftBitsLeftProvider')]
     public function testShiftBitsLeft(int $before, int $positions, int $after): void
     {
-        $this->assertEquals($after, BitOperations::shiftBitsLeft($before, $positions));
+        $this::assertEquals($after, BitOperations::shiftBitsLeft($before, $positions));
     }
 
 
@@ -305,7 +305,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('getBitProvider')]
     public function testGetBit(int $field, int $bit, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::getBit($field, $bit));
+        $this::assertEquals($expected, BitOperations::getBit($field, $bit));
     }
     
     
@@ -313,7 +313,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('hasBitProvider')]
     public function testHasBit(int $field, int $bit, bool $expected): void
     {
-        $this->assertEquals($expected, BitOperations::hasBit($field, $bit));
+        $this::assertEquals($expected, BitOperations::hasBit($field, $bit));
     }
 
 
@@ -321,7 +321,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('setBitProvider')]
     public function testSetBit(int $field, int $bit, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::setBit($field, $bit));
+        $this::assertEquals($expected, BitOperations::setBit($field, $bit));
     }
 
 
@@ -329,7 +329,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('clearBitProvider')]
     public function testClearBit(int $field, int $bit, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::clearBit($field, $bit));
+        $this::assertEquals($expected, BitOperations::clearBit($field, $bit));
     }
 
 
@@ -337,7 +337,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('flipBitProvider')]
     public function testFlipBit(int $field, int $bit, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::flipBit($field, $bit));
+        $this::assertEquals($expected, BitOperations::flipBit($field, $bit));
     }
 
 
@@ -345,7 +345,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('getFlagsProvider')]
     public function testGetFlags(int $field, int $mask, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::getFlags($field, $mask));
+        $this::assertEquals($expected, BitOperations::getFlags($field, $mask));
     }
 
 
@@ -353,7 +353,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('hasAnyFlagProvider')]
     public function testHasAnyFlag(int $field, int $mask, bool $expected): void
     {
-        $this->assertEquals($expected, BitOperations::hasAnyFlag($field, $mask));
+        $this::assertEquals($expected, BitOperations::hasAnyFlag($field, $mask));
     }
 
 
@@ -361,7 +361,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('hasAllFlagsProvider')]
     public function testHasAllFlags(int $field, int $mask, bool $expected): void
     {
-        $this->assertEquals($expected, BitOperations::hasAllFlags($field, $mask));
+        $this::assertEquals($expected, BitOperations::hasAllFlags($field, $mask));
     }
 
 
@@ -369,7 +369,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('setFlagsProvider')]
     public function testSetFlags(int $field, int $mask, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::setFlags($field, $mask));
+        $this::assertEquals($expected, BitOperations::setFlags($field, $mask));
     }
 
 
@@ -377,7 +377,7 @@ class BitFlagTest extends TestCase
     #[DataProvider('clearFlagsProvider')]
     public function testClearFlags(int $field, int $mask, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::clearFlags($field, $mask));
+        $this::assertEquals($expected, BitOperations::clearFlags($field, $mask));
     }
 
 
@@ -385,6 +385,6 @@ class BitFlagTest extends TestCase
     #[DataProvider('flipFlagsProvider')]
     public function testFlipFlags(int $field, int $mask, int $expected): void
     {
-        $this->assertEquals($expected, BitOperations::flipFlags($field, $mask));
+        $this::assertEquals($expected, BitOperations::flipFlags($field, $mask));
     }
 }
