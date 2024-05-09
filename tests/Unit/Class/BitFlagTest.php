@@ -307,8 +307,8 @@ class BitFlagTest extends TestCase
     {
         $this::assertEquals($expected, BitOperations::getBit($field, $bit));
     }
-    
-    
+
+
     #[TestDox('has bit method.')]
     #[DataProvider('hasBitProvider')]
     public function testHasBit(int $field, int $bit, bool $expected): void
