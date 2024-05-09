@@ -15,7 +15,10 @@ class BitOperations
     public const EMPTY_BITFIELD = 0;
 
 
-    /** @var int Semantic constant for a ~0 int intended for use as a bitfield */
+    /**
+     * @var int Semantic constant for a ~0 int intended for use as a bitfield
+     * @noinspection PhpUnused
+     */
     public const ALL_BITFIELDS = ~0;
 
 
@@ -38,13 +41,14 @@ class BitOperations
      *
      * @param int $field Bitmask.
      * @return int[] Bit positions that are flipped in `$field`, 0-indexed.
+     * @noinspection PhpPureFunctionMayProduceSideEffectsInspection
      */
     #[Pure] public static function bitMaskToBits(int $field): array
     {
         $return = [];
         $binary = str_split(decbin($field));
         foreach ($binary as $index => $bit) {
-            if ($bit == '1') {
+            if ($bit === '1') {
                 $position = count($binary) - $index - 1;
                 $return[] = $position;
             }
@@ -122,7 +126,7 @@ class BitOperations
      */
     #[Pure] public static function hasBit(int $field, int $bit): bool
     {
-        return !!(self::getBit($field, $bit));
+        return (bool)self::getBit($field, $bit);
     }
 
 
@@ -189,7 +193,7 @@ class BitOperations
      */
     #[Pure] public static function hasAnyFlag(int $field, int $mask): bool
     {
-        return !!($field & $mask);
+        return (bool)($field & $mask);
     }
 
 
@@ -202,7 +206,7 @@ class BitOperations
      */
     #[Pure] public static function hasAllFlags(int $field, int $mask): bool
     {
-        return ($field & $mask) == $mask;
+        return ($field & $mask) === $mask;
     }
 
 
