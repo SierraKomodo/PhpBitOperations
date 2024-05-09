@@ -27,7 +27,7 @@ class BitOperations
     /**
      * Returns a bitmask with the given bit position flipped. Equivalent of `1 << $bit`.
      *
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int Bitmask.
      */
     #[Pure] public static function bitToMask(int $bit): int
@@ -108,7 +108,7 @@ class BitOperations
      * Retrieves the bitmask for the bit in the given position `$bit` in the bitmask `$field`, if flipped.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int Either the bitmask for the given bit position if flipped, or `0`.
      */
     #[Pure] public static function getBit(int $field, int $bit): int
@@ -121,7 +121,7 @@ class BitOperations
      * Checks if the bit in position `$bit` is set in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return bool `true` if the bit at position `$bit` is set.
      */
     #[Pure] public static function hasBit(int $field, int $bit): bool
@@ -134,7 +134,7 @@ class BitOperations
      * Sets the bit at position `$bit` in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int New bitmask.
      */
     #[Pure] public static function setBit(int $field, int $bit): int
@@ -147,7 +147,7 @@ class BitOperations
      * Unsets the bit at position `$bit` in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int New bitmask.
      */
     #[Pure] public static function clearBit(int $field, int $bit): int
@@ -160,7 +160,7 @@ class BitOperations
      * Flips the bit at position `$bit` in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int New bitmask.
      */
     #[Pure] public static function flipBit(int $field, int $bit): int
