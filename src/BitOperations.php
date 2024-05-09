@@ -17,7 +17,7 @@ class BitOperations
 
     /**
      * @var int Semantic constant for a ~0 int intended for use as a bitfield
-     * @noinspection PhpUnused
+     * @noinspection PhpUnused Not used within the library, but intended to be used by other projects.
      */
     public const ALL_BITFIELDS = ~0;
 
@@ -59,7 +59,8 @@ class BitOperations
 
 
     /**
-     * Converts a list of bit positions into a bit mask, assuming each listed bit is flipped. Reversal of {@link BitOperations::bitMaskToBits()}.
+     * Converts a list of bit positions into a bit mask, assuming each listed bit is flipped. Reversal of
+     * {@link BitOperations::bitMaskToBits()}.
      *
      * @param int[] $bits Bit positions that are flipped, 0-indexed.
      * @return int Bitmask.
