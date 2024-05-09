@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @noinspection PhpUnusedParameterInspection These are intentional due to how the providers are set up for these tests.
+ */
+
 declare(strict_types=1);
 
 namespace SierraKomodo\BitWise\Tests\Unit\Trait;
