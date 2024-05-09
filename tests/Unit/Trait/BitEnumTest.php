@@ -52,7 +52,7 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testToBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($bit, $enum->toBit());
+        $this::assertEquals($bit, $enum->toBit());
     }
 
 
@@ -60,7 +60,7 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testToMask(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($bitMask, $enum->toMask());
+        $this::assertEquals($bitMask, $enum->toMask());
     }
 
 
@@ -68,7 +68,7 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testTryFromBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($enum, TestBitEnum::tryFromBit($bit));
+        $this::assertEquals($enum, TestBitEnum::tryFromBit($bit));
     }
 
 
@@ -76,14 +76,14 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testFromBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($enum, TestBitEnum::fromBit($bit));
+        $this::assertEquals($enum, TestBitEnum::fromBit($bit));
     }
 
 
     #[TestDox('handling of non-existent bit position (Null-safe).')]
     public function testTryFromBitHandlesNull(): void
     {
-        $this->assertNull(TestBitEnum::tryFromBit(10));
+        $this::assertNull(TestBitEnum::tryFromBit(10));
     }
 
 
@@ -108,6 +108,6 @@ class BitEnumTest extends TestCase
         if ($expectError) {
             $this->expectException(Exception::class);
         }
-        $this->assertEquals($enumList, TestBitEnum::fromMask($mask));
+        $this::assertEquals($enumList, TestBitEnum::fromMask($mask));
     }
 }

@@ -87,7 +87,7 @@ trait BitEnum
         $bits = BitOperations::bitMaskToBits($mask);
         foreach ($bits as $bit) {
             $enum = self::tryFrom($bit);
-            if (!$enum) {
+            if (is_null($enum)) {
                 throw new RuntimeException("Flipped bit in position `{$bit}` is not in the range of valid bits.");
             }
             $return[] = $enum;
