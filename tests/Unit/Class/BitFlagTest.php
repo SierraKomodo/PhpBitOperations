@@ -17,6 +17,9 @@ use SierraKomodo\BitWise\BitOperations;
 #[CoversClass(BitOperations::class)]
 class BitFlagTest extends TestCase
 {
+    /**
+     * @return array<string, array{int, int}>
+     */
     public static function bitToMaskProvider(): array
     {
         return [
@@ -28,6 +31,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int[]}>
+     */
     public static function maskToBitsProvider(): array
     {
         return [
@@ -39,6 +45,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function shiftBitsRightProvider(): array
     {
         return [
@@ -51,6 +60,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function shiftBitsLeftProvider(): array
     {
         return [
@@ -63,6 +75,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function getBitProvider(): array
     {
         return [
@@ -75,6 +90,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, bool}>
+     */
     public static function hasBitProvider(): array
     {
         return [
@@ -87,6 +105,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function setBitProvider(): array
     {
         return [
@@ -97,6 +118,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function clearBitProvider(): array
     {
         return [
@@ -107,6 +131,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function flipBitProvider(): array
     {
         return [
@@ -117,6 +144,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function getFlagsProvider(): array
     {
         return [
@@ -132,6 +162,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, bool}>
+     */
     public static function hasAnyFlagProvider(): array
     {
         return [
@@ -147,6 +180,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, bool}>
+     */
     public static function hasAllFlagsProvider(): array
     {
         return [
@@ -162,6 +198,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function setFlagsProvider(): array
     {
         return [
@@ -176,6 +215,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function clearFlagsProvider(): array
     {
         return [
@@ -191,6 +233,9 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{int, int, int}>
+     */
     public static function flipFlagsProvider(): array
     {
         return [
@@ -215,6 +260,11 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @param int $mask
+     * @param int[] $bits
+     * @return void
+     */
     #[TestDox('bitmask to bit list conversion.')]
     #[DataProvider('maskToBitsProvider')]
     public function testBitMaskToBits(int $mask, array $bits): void
@@ -223,6 +273,11 @@ class BitFlagTest extends TestCase
     }
 
 
+    /**
+     * @param int $mask
+     * @param int[] $bits
+     * @return void
+     */
     #[TestDox('bit list to bitmask conversion.')]
     #[DataProvider('maskToBitsProvider')]
     public function testBitsToMask(int $mask, array $bits): void
