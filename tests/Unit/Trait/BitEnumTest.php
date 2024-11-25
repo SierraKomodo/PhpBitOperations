@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @noinspection PhpUnusedParameterInspection These are intentional due to how the providers are set up for these tests.
+ */
+
 declare(strict_types=1);
 
 namespace SierraKomodo\BitWise\Tests\Unit\Trait;
@@ -19,6 +23,9 @@ use SierraKomodo\BitWise\Trait\BitEnum;
 #[UsesClass(BitOperations::class)]
 class BitEnumTest extends TestCase
 {
+    /**
+     * @return array<string, array{TestBitEnum, int, int}>
+     */
     public static function singleBitProvider(): array
     {
         return [
@@ -29,6 +36,9 @@ class BitEnumTest extends TestCase
     }
 
 
+    /**
+     * @return array<string, array{TestBitEnum[], int, bool}>
+     */
     public static function multipleBitsProvider(): array
     {
         return [
@@ -46,7 +56,7 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testToBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($bit, $enum->toBit());
+        $this::assertEquals($bit, $enum->toBit());
     }
 
 
@@ -54,7 +64,7 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testToMask(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($bitMask, $enum->toMask());
+        $this::assertEquals($bitMask, $enum->toMask());
     }
 
 
@@ -62,7 +72,7 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testTryFromBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($enum, TestBitEnum::tryFromBit($bit));
+        $this::assertEquals($enum, TestBitEnum::tryFromBit($bit));
     }
 
 
@@ -70,14 +80,14 @@ class BitEnumTest extends TestCase
     #[DataProvider('singleBitProvider')]
     public function testFromBit(TestBitEnum $enum, int $bit, int $bitMask): void
     {
-        $this->assertEquals($enum, TestBitEnum::fromBit($bit));
+        $this::assertEquals($enum, TestBitEnum::fromBit($bit));
     }
 
 
     #[TestDox('handling of non-existent bit position (Null-safe).')]
     public function testTryFromBitHandlesNull(): void
     {
-        $this->assertNull(TestBitEnum::tryFromBit(10));
+        $this::assertNull(TestBitEnum::tryFromBit(10));
     }
 
 
@@ -89,6 +99,12 @@ class BitEnumTest extends TestCase
     }
 
 
+    /**
+     * @param TestBitEnum[] $enumList
+     * @param int $mask
+     * @param bool $expectError
+     * @return void
+     */
     #[TestDox('creation of enum list from bit mask.')]
     #[DataProvider('multipleBitsProvider')]
     public function testFromMask(array $enumList, int $mask, bool $expectError): void
@@ -96,6 +112,6 @@ class BitEnumTest extends TestCase
         if ($expectError) {
             $this->expectException(Exception::class);
         }
-        $this->assertEquals($enumList, TestBitEnum::fromMask($mask));
+        $this::assertEquals($enumList, TestBitEnum::fromMask($mask));
     }
 }
