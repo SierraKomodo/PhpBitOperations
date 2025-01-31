@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace SierraKomodo\BitWise\Trait;
 
 use BackedEnum;
-use Exception;
+use RuntimeException;
 use SierraKomodo\BitWise\BitOperations;
 
 use function is_null;
@@ -62,13 +62,13 @@ trait BitEnum
      * @param int $bit The bit position to seek.
      * @return BackedEnum Matching enumeration.
      *
-     * @throws Exception
+     * @throws RuntimeException
      */
     public static function fromBit(int $bit): BackedEnum
     {
         $result = self::tryFromBit($bit);
         if (is_null($result)) {
-            throw new Exception("Requested bit position does not exist in this enumeration.");
+            throw new RuntimeException("Requested bit position does not exist in this enumeration.");
         }
         return $result;
     }
@@ -79,7 +79,7 @@ trait BitEnum
      *
      * @param int $mask Bitmask to parse.
      * @return BackedEnum[] Array of matching enum flags.
-     * @throws Exception
+     * @throws RuntimeException
      */
     public static function fromMask(int $mask): array
     {
@@ -87,8 +87,8 @@ trait BitEnum
         $bits = BitOperations::bitMaskToBits($mask);
         foreach ($bits as $bit) {
             $enum = self::tryFrom($bit);
-            if (!$enum) {
-                throw new Exception("Flipped bit in position `{$bit}` is not in the range of valid bits.");
+            if (is_null($enum)) {
+                throw new RuntimeException("Flipped bit in position `{$bit}` is not in the range of valid bits.");
             }
             $return[] = $enum;
         }

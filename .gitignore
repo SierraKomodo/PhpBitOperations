@@ -1,6 +1,13 @@
 # Generated test coverage data
 /tests/coverage/
 
+## PHPStan
+phpstan.neon
+
+## PHP Code Sniffer
+phpcs.xml
+.phpcs.xml
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/phpunit,composer,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=phpunit,composer,git

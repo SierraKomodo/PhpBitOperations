@@ -15,7 +15,10 @@ class BitOperations
     public const EMPTY_BITFIELD = 0;
 
 
-    /** @var int Semantic constant for a ~0 int intended for use as a bitfield */
+    /**
+     * @var int Semantic constant for a ~0 int intended for use as a bitfield
+     * @noinspection PhpUnused Not used within the library, but intended to be used by other projects.
+     */
     public const ALL_BITFIELDS = ~0;
 
 
@@ -24,7 +27,7 @@ class BitOperations
     /**
      * Returns a bitmask with the given bit position flipped. Equivalent of `1 << $bit`.
      *
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int Bitmask.
      */
     #[Pure] public static function bitToMask(int $bit): int
@@ -38,13 +41,14 @@ class BitOperations
      *
      * @param int $field Bitmask.
      * @return int[] Bit positions that are flipped in `$field`, 0-indexed.
+     * @noinspection PhpPureFunctionMayProduceSideEffectsInspection
      */
     #[Pure] public static function bitMaskToBits(int $field): array
     {
         $return = [];
         $binary = str_split(decbin($field));
         foreach ($binary as $index => $bit) {
-            if ($bit == '1') {
+            if ($bit === '1') {
                 $position = count($binary) - $index - 1;
                 $return[] = $position;
             }
@@ -55,7 +59,8 @@ class BitOperations
 
 
     /**
-     * Converts a list of bit positions into a bit mask, assuming each listed bit is flipped. Reversal of {@link BitOperations::bitMaskToBits()}.
+     * Converts a list of bit positions into a bit mask, assuming each listed bit is flipped. Reversal of
+     * {@link BitOperations::bitMaskToBits()}.
      *
      * @param int[] $bits Bit positions that are flipped, 0-indexed.
      * @return int Bitmask.
@@ -104,7 +109,7 @@ class BitOperations
      * Retrieves the bitmask for the bit in the given position `$bit` in the bitmask `$field`, if flipped.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int Either the bitmask for the given bit position if flipped, or `0`.
      */
     #[Pure] public static function getBit(int $field, int $bit): int
@@ -117,12 +122,12 @@ class BitOperations
      * Checks if the bit in position `$bit` is set in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return bool `true` if the bit at position `$bit` is set.
      */
     #[Pure] public static function hasBit(int $field, int $bit): bool
     {
-        return !!(self::getBit($field, $bit));
+        return (bool)self::getBit($field, $bit);
     }
 
 
@@ -130,7 +135,7 @@ class BitOperations
      * Sets the bit at position `$bit` in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int New bitmask.
      */
     #[Pure] public static function setBit(int $field, int $bit): int
@@ -143,7 +148,7 @@ class BitOperations
      * Unsets the bit at position `$bit` in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int New bitmask.
      */
     #[Pure] public static function clearBit(int $field, int $bit): int
@@ -156,7 +161,7 @@ class BitOperations
      * Flips the bit at position `$bit` in the bitmask `$field`.
      *
      * @param int $field Bitmask.
-     * @param int $bit Bit position, 0-indexed.
+     * @param int $bit A bit position, 0-indexed.
      * @return int New bitmask.
      */
     #[Pure] public static function flipBit(int $field, int $bit): int
@@ -189,7 +194,7 @@ class BitOperations
      */
     #[Pure] public static function hasAnyFlag(int $field, int $mask): bool
     {
-        return !!($field & $mask);
+        return (bool)($field & $mask);
     }
 
 
@@ -202,7 +207,7 @@ class BitOperations
      */
     #[Pure] public static function hasAllFlags(int $field, int $mask): bool
     {
-        return ($field & $mask) == $mask;
+        return ($field & $mask) === $mask;
     }
 
 
